@@ -1,0 +1,153 @@
+.slider__main {
+  border: 1px solid black;
+  border-radius: .5rem;
+  padding: 2rem;
+
+  overflow: hidden;
+}
+
+.slider__main-item {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 1px solid black;
+
+  padding: 1rem;
+}
+
+.slider__main-item.left_slide_in {
+  animation-name: leftSlideIn;
+  animation-duration: 1s;
+}
+
+.slider__main-item.left_slide_out {
+  animation-name: leftSlideOut;
+  animation-duration: 1s;
+}
+
+.slider__main-item.right_slide_in {
+  animation-name: rightSlideIn;
+  animation-duration: 1s;
+}
+
+.slider__main-item.right_slide_out {
+  animation-name: rightSlideOut;
+  animation-duration: 1s;
+}
+
+.prev {
+  position: absolute;
+  left: -5rem;
+  top: 50%;
+  z-index: 1;
+
+  transform: translateY(-50%);
+
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: white;
+
+  border: 1px solid black;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prev-arrow {
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+
+  width: 50%;
+  height: 50%;
+
+  transform: rotate(225deg);
+}
+
+.next {
+  position: absolute;
+  right: -5rem;
+  top: 50%;
+  z-index: 1;
+
+  transform: translateY(-50%);
+
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: white;
+
+  border: 1px solid black;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.next-arrow {
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+
+  width: 50%;
+  height: 50%;
+
+  transform: rotate(45deg);
+}
+
+@keyframes leftSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes leftSlideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes rightSlideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rightSlideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 700px) {
+  .prev {
+    bottom: -5rem;
+    left: 40%;
+    top: initial
+  }
+
+  .next {
+    bottom: -5rem;
+    left: 60%;
+    top: initial;
+  }
+}
