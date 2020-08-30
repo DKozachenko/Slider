@@ -35,11 +35,6 @@ const browseRight = (items) => {
     }
   })
 
-  if (index === items.length - 1) {
-    indexNext = 0;
-  } else {
-    indexNext = index + 1;
-  }
   indexNext = index === items.length - 1 ? 0 : index + 1;
 
   changeSlide(items, index, indexNext, 'left_slide');
